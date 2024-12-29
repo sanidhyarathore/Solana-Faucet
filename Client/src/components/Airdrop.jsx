@@ -21,8 +21,9 @@ export default function Airdrop() {
         }
 
         try {
-            await connection.requestAirdrop(wallet.publicKey, amount * LAMPORTS_PER_SOL);
-            alert(`${amount} SOL added to your wallet`);
+            const s = await connection.requestAirdrop(wallet.publicKey, amount * LAMPORTS_PER_SOL);
+            alert(`${amount} SOL added to your wallet with signature ${s}`);
+            console.log(s)
         } catch (error) {
             console.error("Airdrop failed:", error);
             alert("Airdrop request failed. Check the console for details.");
