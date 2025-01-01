@@ -11,10 +11,10 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 
 function App() {
-  const endpoint = "https://solana-devnet.g.alchemy.com/v2/wtp7XKCz0CbtY5HEJE4ntow9f2oA96mn"
+  const endpoint = "https://solana-devnet.g.alchemy.com/v2/wtp7XKCz0CbtY5HEJE4ntow9f2oA96mn"//customised RPC
 
   return (
-    <>
+    <div className='max-w-screen-xl mx-auto p-8 text-center'>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
@@ -27,7 +27,7 @@ function App() {
         </WalletProvider>
       </ConnectionProvider>
 
-    </>
+    </div>
   );
 }
 
